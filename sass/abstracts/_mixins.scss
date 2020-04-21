@@ -1,0 +1,14 @@
+@mixin clearfix {
+    &::after { // psudo element
+        content: ""; // we don't wanna see that element in the template. // it should here
+        display: table; // is the standared way
+        clear  : both; // clear both left right float 
+    }
+}
+
+@mixin absCenter {
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    transform: translate(-50%, -50%);
+}

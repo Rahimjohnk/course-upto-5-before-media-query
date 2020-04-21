@@ -1,0 +1,45 @@
+.header {
+    height: 95vh;
+    /* 95% of view put height. it always hold 95 % view put hight if we could resize the screen */
+    background-image:
+        linear-gradient(to right bottom,
+            rgba($color-primary-light, 0.8),
+            rgba($color-primary-dark, 0.8)),
+        url(../img/hero.jpg);
+    /* rgba(126, 213, 111, 0.808) opacity 0.808 that is 80 % that why we can see the background image; */
+    background-size: cover;
+    /*  full image view coverage */
+    background-position: top;
+    /* image top position should stay safe */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    /* .header is origin for .logo-box class . logo-box positioned based on .header class. */
+    position: relative;
+
+    &__logo-box {
+        /* .header is parent so it position based on .header */
+        position   : absolute;
+        top        : 4rem;
+        left       : 4rem;
+        /* top     : 40px;
+        left       : 40px; */
+    }
+
+    &__logo {
+        height   : 3.5rem;
+        /* height: 35px; */
+    }
+
+    &__text-box {
+        position: absolute;
+        /* .header is parent so it position based on .header */
+        top      : 40%;
+        left     : 50%;
+        transform: translate(-50%, -50%);
+        /* It place us a box exact mid possition */
+
+        text-align: center;
+        /* for btn it's just a text so that  */
+    }
+}
